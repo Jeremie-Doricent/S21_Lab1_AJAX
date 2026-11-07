@@ -33,3 +33,31 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        // Favori
+        $(".favorite").on("click", function () {
+            let baliseA = $(this);
+            let idZombie = baliseA.attr("id");
+
+            $.post("/Zombie/Favorite", { "id": idZombie }, function (data) {
+                if (data) {
+                    baliseA.removeClass("text-dark").addClass("text-primary");
+                } else {
+                    baliseA.removeClass("text-primary").addClass("text-dark");
+                }
+            });
+        });
+
+        // Details en modal
+        $(".detail-btn").on("click", function () {
+            let idZombie = $(this).attr("id");
+
+            $.get("/Zombie/Details", { "id": idZombie }, function (data) {
+                $("#showmodal #content").html(data);
+                $("#showmodal").modal("show");
+            });
+        });
+    </script>
+}

@@ -79,3 +79,8 @@ body {
 label {
   font-size: 1rem;
 }
+.highlight {
+    background-color: darkviolet;
+    color: white;
+    opacity: 0.5;
+}
