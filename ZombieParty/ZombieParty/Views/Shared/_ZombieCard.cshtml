@@ -26,6 +26,10 @@
         <a class="p-2 border w-100 btn btn-info px-3" asp-controller="Zombie" asp-action="Edit" asp-route-Id="@Model.Id">
             <i class="fa-solid fa-pen-to-square"></i>&nbsp;@Locals["Edit"]
         </a>
+        <a class="detail-btn p-2 border w-100 btn btn-warning px-3" id="@Model.Id">
+            <i class="fa-solid fa-pen-to-square"></i>&nbsp;@Locals["Details"]
+        </a>
+
         <hr />
     </div>
 </div>
